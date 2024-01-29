@@ -9,7 +9,7 @@ window.iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 Events.on('display-name', e => {
     const me = e.detail.message;
     const $displayName = $('displayName')
-    $displayName.textContent = 'You are known as ' + me.displayName;
+    $displayName.textContent = '您的名称为 ' + me.displayName;
     $displayName.title = me.deviceName;
 });
 
@@ -624,10 +624,7 @@ Events.on('load', () => {
 });
 
 Notifications.PERMISSION_ERROR = `
-Notifications permission has been blocked
-as the user has dismissed the permission prompt several times.
-This can be reset in Page Info
-which can be accessed by clicking the lock icon next to the URL.`;
+通知权限已被阻止，因为用户已多次关闭权限提示。这可以在“页面信息”中重置，可以通过单击URL旁边的锁定图标来访问。`;
 
 document.body.onclick = e => { // safari hack to fix audio
     document.body.onclick = null;
